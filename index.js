@@ -1,5 +1,5 @@
 function submitData( name, email ) {
-  return fetch( 'http://localhost:3000/users', {
+  const option ={
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -9,7 +9,8 @@ function submitData( name, email ) {
         name,
         email
       } )
-    } )
+    } ;
+  return fetch( 'http://localhost:3000/users', option )
     .then( function ( response ) {
       return response.json()
     } )
